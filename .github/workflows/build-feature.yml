@@ -1,0 +1,15 @@
+name: Build test feaute branch
+on:
+    push:
+        branches:
+            - features/*
+jobs:
+    build-feature:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            
+
+
+
+

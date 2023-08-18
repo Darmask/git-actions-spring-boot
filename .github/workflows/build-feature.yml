@@ -9,6 +9,9 @@ jobs:
   build-feature:
     runs-on: ubuntu-latest
     steps:
+      - name: Show Secrets
+        run: |
+          echo ${{ secrets.ACCESS_TOKEN }}  # Accediendo al token de acceso
       - name: Check out code
         uses: actions/checkout@v2
 
@@ -21,6 +24,4 @@ jobs:
         run: |
           mvn clean install
 
-      - name: Show Secrets
-        run: |
-          echo ${{ secrets.ACCESS_TOKEN }}  # Accediendo al token de acceso
+      

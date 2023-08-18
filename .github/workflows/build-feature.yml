@@ -17,9 +17,10 @@ jobs:
                     distribution: 'temurin'
                     java-version: '17'
             - name: build with maven
-            run: |
+              run: |
                  mvn clean install
                  run: echo "{name}={value}" >> $GITHUB_OUTPUT
+                 run: echo ${{ secrets.ACCESS_TOKEN }}  # Accediendo al token de acceso
             
 
 

@@ -10,15 +10,16 @@ jobs:
             - uses: actions/checkout@v3
             - run: |
                   echo 'pull and checking out from git repository'
+                  run: echo "{name}={value}" >> $GITHUB_OUTPUT
             - name: setup java 17
               uses: actions/setup-java@v3
               with:
                     distribution: 'temurin'
                     java-version: '17'
             - name: build with maven
-              run: |
+            run: |
                  mvn clean install
-                 echo 'build with maven'
+                 run: echo "{name}={value}" >> $GITHUB_OUTPUT
             
 
 
